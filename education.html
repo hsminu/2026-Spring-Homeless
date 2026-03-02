@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 
 <head>
   <!-- Basic -->
@@ -8,18 +8,18 @@
   <!-- Mobile Metas -->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <!-- Site Metas -->
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/logo_circle.png" type="">
+  <meta name="keywords" content="ARGOS, 충남대, 정보보안, 동아리, CNU" />
+  <meta name="description" content="충남대학교 정보보안 동아리 ARGOS - 동아리 활동" />
+  <meta name="author" content="ARGOS" />
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/logo_circle.png" type="image/png">
 
-  <title> ARGOS </title>
+  <title>동아리 활동 - ARGOS</title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
   <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!--owl slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
@@ -65,7 +65,7 @@
                 <a class="nav-link" href="index.html">Home</a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="education.html">교육 활동 <span class="sr-only">(current)</span></a> 
+                <a class="nav-link" href="education.html">동아리 활동 <span class="sr-only">(current)</span></a> 
                 <ul>
                   <li>
                       <a href="seminar.html" class="nav-link active">정기 세미나</a>
@@ -79,11 +79,8 @@
               </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="history.html">활동 기록</a>
+                <a class="nav-link" href="history.html">연혁</a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="community.html">게시판</a>
-              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="https://open.kakao.com/o/sIllhT5f">가입 문의</a>
               </li>
@@ -108,19 +105,19 @@
         <div class="container ">
               <div class="container">
                 <div class="slideshow-container">
-                  <!-- Full-width images with number and caption text -->
-                  <div class="mySlides-education">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/edu1.png" style="width:100%">
+                  <div class="slideshow-stage">
+                    <a class="slide-btn slide-prev" href="#" onclick="event.preventDefault(); plusSlides(-1, 'education');" aria-label="이전 이미지"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                    <a class="slide-btn slide-next" href="#" onclick="event.preventDefault(); plusSlides(1, 'education');" aria-label="다음 이미지"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    <div class="mySlides-education slide-visible">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/edu1.png" class="slide-img" alt="동아리 교육 활동">
+                    </div>
+                    <div class="mySlides-education">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/edu2.png" class="slide-img" alt="동아리 교육 활동">
+                    </div>
+                    <div class="mySlides-education">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/edu3.png" class="slide-img" alt="동아리 교육 활동">
+                    </div>
                   </div>
-              
-                  <div class="mySlides-education">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/edu2.png" style="width:100%">
-                  </div>
-              
-                  <div class="mySlides-education">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/edu3.png" style="width:100%">
-                  </div>
-
                   <!-- Thumbnail images -->
                   <div class="thumbnails-education">
                       <img class="thumbnail-education" src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/edu1.png" onclick="currentSlide(1, 'education')">
@@ -128,15 +125,12 @@
                       <img class="thumbnail-education" src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/edu3.png" onclick="currentSlide(3, 'education')">
                   </div>
 
-                  <!-- Next and previous buttons -->
-                  <a class="prev" onclick="plusSlides(-1, 'education')">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1, 'education')">&#10095;</a>
                 </div>
 
                 <div class="text-container">
                   <h2>동아리 교육</h2>
                   <p>동아리 자체적인 교육 프로그램을 통해 C, JAVA 같은 프로그래밍 언어부터 System Hacking, Reversing 등 다양한 보안 분야의 이론 지식과 공격/방어 기법을 학습하고 실습해볼 수 있는 환경을 제공합니다.</p>
-                  <p>2023년 교육 활동 : C언어, Assembly, System Hacking, Reverse Engineering, Bomb Lab, Git</p>
+                  <p>2023년 동아리 활동 : C언어, Assembly, System Hacking, Reverse Engineering, Bomb Lab, Git</p>
                 </div>
               </div>
         </div>  
@@ -148,19 +142,19 @@
         <div class="container ">
               <div class="container">
                 <div class="slideshow-container">
-                  <!-- Full-width images with number and caption text -->
-                  <div class="mySlides-study">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/study1.jpg" style="width:100%">
+                  <div class="slideshow-stage">
+                    <a class="slide-btn slide-prev" href="#" onclick="event.preventDefault(); plusSlides(-1, 'study');" aria-label="이전 이미지"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                    <a class="slide-btn slide-next" href="#" onclick="event.preventDefault(); plusSlides(1, 'study');" aria-label="다음 이미지"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    <div class="mySlides-study slide-visible">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/study1.jpg" class="slide-img" alt="스터디 팀 활동">
+                    </div>
+                    <div class="mySlides-study">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/study2.png" class="slide-img" alt="스터디 팀 활동">
+                    </div>
+                    <div class="mySlides-study">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/study3.png" class="slide-img" alt="스터디 팀 활동">
+                    </div>
                   </div>
-              
-                  <div class="mySlides-study">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/study2.png" style="width:100%">
-                  </div>
-              
-                  <div class="mySlides-study">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/study3.png" style="width:100%">
-                  </div>
-
                   <!-- Thumbnail images -->
                   <div class="thumbnails-study">
                       <img class="thumbnail-study" src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/study1.jpg" onclick="currentSlide(1, 'study')">
@@ -168,9 +162,6 @@
                       <img class="thumbnail-study" src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/study3.png" onclick="currentSlide(3, 'study')">
                   </div>
 
-                  <!-- Next and previous buttons -->
-                  <a class="prev" onclick="plusSlides(-1, 'study')">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1, 'study')">&#10095;</a>
                 </div>
 
                 <div class="text-container">
@@ -188,19 +179,19 @@
         <div class="container ">
               <div class="container">
                 <div class="slideshow-container">
-                  <!-- Full-width images with number and caption text -->
-                  <div class="mySlides-seminar">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/seminar1.png" style="width:100%">
+                  <div class="slideshow-stage">
+                    <a class="slide-btn slide-prev" href="#" onclick="event.preventDefault(); plusSlides(-1, 'seminar');" aria-label="이전 이미지"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                    <a class="slide-btn slide-next" href="#" onclick="event.preventDefault(); plusSlides(1, 'seminar');" aria-label="다음 이미지"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    <div class="mySlides-seminar slide-visible">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/seminar1.png" class="slide-img" alt="정기 세미나">
+                    </div>
+                    <div class="mySlides-seminar">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/seminar2.png" class="slide-img" alt="정기 세미나">
+                    </div>
+                    <div class="mySlides-seminar">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/seminar3.png" class="slide-img" alt="정기 세미나">
+                    </div>
                   </div>
-              
-                  <div class="mySlides-seminar">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/seminar2.png" style="width:100%">
-                  </div>
-              
-                  <div class="mySlides-seminar">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/seminar3.png" style="width:100%">
-                  </div>
-
                   <!-- Thumbnail images -->
                   <div class="thumbnails-seminar">
                       <img class="thumbnail-seminar" src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/seminar1.png" onclick="currentSlide(1, 'seminar')">
@@ -208,9 +199,6 @@
                       <img class="thumbnail-seminar" src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/seminar3.png" onclick="currentSlide(3, 'seminar')">
                   </div>
 
-                  <!-- Next and previous buttons -->
-                  <a class="prev" onclick="plusSlides(-1, 'seminar')">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1, 'seminar')">&#10095;</a>
                 </div>
 
                 <div class="text-container"> 
@@ -231,19 +219,19 @@
         <div class="container ">
               <div class="container">
                 <div class="slideshow-container">
-                  <!-- Full-width images with number and caption text -->
-                  <div class="mySlides-hacking">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/hack1.png" style="width:100%">
+                  <div class="slideshow-stage">
+                    <a class="slide-btn slide-prev" href="#" onclick="event.preventDefault(); plusSlides(-1, 'hacking');" aria-label="이전 이미지"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                    <a class="slide-btn slide-next" href="#" onclick="event.preventDefault(); plusSlides(1, 'hacking');" aria-label="다음 이미지"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    <div class="mySlides-hacking slide-visible">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/hack1.png" class="slide-img" alt="해킹 시연회">
+                    </div>
+                    <div class="mySlides-hacking">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/hack2.png" class="slide-img" alt="해킹 시연회">
+                    </div>
+                    <div class="mySlides-hacking">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/hack3.png" class="slide-img" alt="해킹 시연회">
+                    </div>
                   </div>
-              
-                  <div class="mySlides-hacking">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/hack2.png" style="width:100%">
-                  </div>
-              
-                  <div class="mySlides-hacking">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/hack3.png" style="width:100%">
-                  </div>
-
                   <!-- Thumbnail images -->
                   <div class="thumbnails-hacking">
                       <img class="thumbnail-hacking" src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/hack1.png" onclick="currentSlide(1, 'hacking')">
@@ -251,9 +239,6 @@
                       <img class="thumbnail-hacking" src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/hack3.png" onclick="currentSlide(3, 'hacking')">
                   </div>
 
-                  <!-- Next and previous buttons -->
-                  <a class="prev" onclick="plusSlides(-1, 'hacking')">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1, 'hacking')">&#10095;</a>
                 </div>
 
                 <div class="text-container">
@@ -275,19 +260,19 @@
         <div class="container ">
               <div class="container">
                 <div class="slideshow-container">
-                  <!-- Full-width images with number and caption text -->
-                  <div class="mySlides-hackathon">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/hackathon1.png" style="width:100%">
+                  <div class="slideshow-stage">
+                    <a class="slide-btn slide-prev" href="#" onclick="event.preventDefault(); plusSlides(-1, 'hackathon');" aria-label="이전 이미지"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                    <a class="slide-btn slide-next" href="#" onclick="event.preventDefault(); plusSlides(1, 'hackathon');" aria-label="다음 이미지"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    <div class="mySlides-hackathon slide-visible">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/hackathon1.png" class="slide-img" alt="SOGRA Hackathon">
+                    </div>
+                    <div class="mySlides-hackathon">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/hackathon2.png" class="slide-img" alt="SOGRA Hackathon">
+                    </div>
+                    <div class="mySlides-hackathon">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/hackathon3.png" class="slide-img" alt="SOGRA Hackathon">
+                    </div>
                   </div>
-              
-                  <div class="mySlides-hackathon">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/hackathon2.png" style="width:100%">
-                  </div>
-              
-                  <div class="mySlides-hackathon">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/hackathon3.png" style="width:100%">
-                  </div>
-
                   <!-- Thumbnail images -->
                   <div class="thumbnails-hackathon">
                       <img class="thumbnail-hackathon" src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/hackathon1.png" onclick="currentSlide(1, 'hackathon')">
@@ -295,9 +280,6 @@
                       <img class="thumbnail-hackathon" src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/hackathon3.png" onclick="currentSlide(3, 'hackathon')">
                   </div>
 
-                  <!-- Next and previous buttons -->
-                  <a class="prev" onclick="plusSlides(-1, 'hackathon')">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1, 'hackathon')">&#10095;</a>
                 </div>
 
                 <div class="text-container">
@@ -313,64 +295,24 @@
     </div>
   </section>
 
-  <section class="education_section layout_padding aff">
-    <div class="education_container">
-        <div class="container ">
-              <div class="container">
-                <div class="slideshow-container">
-                  <!-- Full-width images with number and caption text -->
-                  <div class="mySlides-aff">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/aff1.png" style="width:100%">
-                  </div>
-              
-                  <div class="mySlides-aff">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/aff2.png" style="width:100%">
-                  </div>
-              
-                  <div class="mySlides-aff">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/aff3.png" style="width:100%">
-                  </div>
-
-                  <!-- Thumbnail images -->
-                  <div class="thumbnails-aff">
-                      <img class="thumbnail-aff" src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/aff1.png" onclick="currentSlide(1, 'aff')">
-                      <img class="thumbnail-aff" src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/aff2.png" onclick="currentSlide(2, 'aff')">
-                      <img class="thumbnail-aff" src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/aff3.png" onclick="currentSlide(3, 'aff')">
-                  </div>
-
-                  <!-- Next and previous buttons -->
-                  <a class="prev" onclick="plusSlides(-1, 'aff')">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1, 'aff')">&#10095;</a>
-                </div>
-
-                <div class="text-container">
-                  <h2>AFF</h2><h3>(ARGOS Freshman Festival)</h3>
-                  <p>매년 9월, C언어 교육을 이수한 1학년 학생들이 자신의 역량을 뽐낼 수 있는 알고리즘 풀이 대회를 개최합니다.</p>
-                  <p>자체적으로 개발한 사이트를 통해 알고리즘 문제를 풀고, 점수를 획득하는 방식으로 순위를 가르는 Jeopardy 형식의 대회입니다.</p>
-                </div>
-              </div>
-        </div>  
-    </div>
-  </section>
-
   <section class="education_section layout_padding jfs">
     <div class="education_container">
         <div class="container ">
               <div class="container">
                 <div class="slideshow-container">
-                  <!-- Full-width images with number and caption text -->
-                  <div class="mySlides-jfs">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/jfs1.png" style="width:100%">
+                  <div class="slideshow-stage">
+                    <a class="slide-btn slide-prev" href="#" onclick="event.preventDefault(); plusSlides(-1, 'jfs');" aria-label="이전 이미지"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+                    <a class="slide-btn slide-next" href="#" onclick="event.preventDefault(); plusSlides(1, 'jfs');" aria-label="다음 이미지"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                    <div class="mySlides-jfs slide-visible">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/jfs1.png" class="slide-img" alt="Just For Security CTF">
+                    </div>
+                    <div class="mySlides-jfs">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/jfs2.png" class="slide-img" alt="Just For Security CTF">
+                    </div>
+                    <div class="mySlides-jfs">
+                      <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/jfs3.png" class="slide-img" alt="Just For Security CTF">
+                    </div>
                   </div>
-              
-                  <div class="mySlides-jfs">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/jfs2.png" style="width:100%">
-                  </div>
-              
-                  <div class="mySlides-jfs">
-                    <img src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/jfs3.png" style="width:100%">
-                  </div>
-
                   <!-- Thumbnail images -->
                   <div class="thumbnails-jfs">
                       <img class="thumbnail-jfs" src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/jfs1.png" onclick="currentSlide(1, 'jfs')">
@@ -378,9 +320,6 @@
                       <img class="thumbnail-jfs" src="https://cdn.jsdelivr.net/gh/4RG0S/2024-Spring-Homeless@main/images/jfs3.png" onclick="currentSlide(3, 'jfs')">
                   </div>
 
-                  <!-- Next and previous buttons -->
-                  <a class="prev" onclick="plusSlides(-1, 'jfs')">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1, 'jfs')">&#10095;</a>
                 </div>
 
                 <div class="text-container">
@@ -406,13 +345,13 @@
               Address
             </h4>
             <div class="contact_link_box">
-              <a href="">
+              <a href="https://map.naver.com/p/entry/place/21033930?c=15.00,0,0,0,dh" target="_blank" rel="noopener noreferrer">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   대전광역시 유성구 대학로 99 공과대학 5호관
                 </span>
               </a>
-              <a href="">
+              <a href="mailto:we.represent.argos@gmail.com">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
                   we.represent.argos@gmail.com
@@ -421,10 +360,7 @@
             </div>
           </div>
           <div class="info_social">
-            <a href="">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a href="">
+            <a href="https://www.instagram.com/cnu_argos/" target="_blank" rel="noopener noreferrer" aria-label="인스타그램">
               <i class="fa fa-instagram" aria-hidden="true"></i>
             </a>
           </div>
@@ -439,10 +375,10 @@
                 Home
               </a>
               <a class="" href="education.html">
-                교육 활동
+                동아리 활동
               </a>
               <a class="" href="history.html">
-                활동 기록
+                연혁
               </a>
               <a class="" href="https://open.kakao.com/o/sIllhT5f">
                 가입 문의

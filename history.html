@@ -20,7 +20,7 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
   <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <!--owl slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
@@ -65,7 +65,7 @@
                 <a class="nav-link" href="index.html">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="education.html">교육 활동</a>
+                <a class="nav-link" href="education.html">동아리 활동</a>
                 <ul>
                   <li>
                       <a href="seminar.html" class="nav-link">정기 세미나</a>
@@ -79,11 +79,8 @@
               </ul>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="history.html">활동 기록 <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="history.html">연혁 <span class="sr-only">(current)</span></a>
               </li>
-              <!-- <li class="nav-item">
-                <a class="nav-link" href="community.html">게시판</a>
-              </li> -->
               <li class="nav-item">
                 <a class="nav-link" href="https://open.kakao.com/o/sIllhT5f">가입 문의</a>
               </li>
@@ -119,7 +116,10 @@
           </div>
         </div>
       </div>
-      <div class="history">
+      <div class="history" id="historySection">
+        <div class="history-line">
+          <div class="history-line-fill" id="historyLineFill"></div>
+        </div>
         <div>
           <h2>2023</h2>
           (회장 : comalmot)
@@ -419,13 +419,13 @@
               Address
             </h4>
             <div class="contact_link_box">
-              <a href="">
+              <a href="https://map.naver.com/p/entry/place/21033930?c=15.00,0,0,0,dh" target="_blank" rel="noopener noreferrer">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   대전광역시 유성구 대학로 99 공과대학 5호관
                 </span>
               </a>
-              <a href="">
+              <a href="mailto:we.represent.argos@gmail.com">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
                   we.represent.argos@gmail.com
@@ -434,10 +434,7 @@
             </div>
           </div>
           <div class="info_social">
-            <a href="">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a href="">
+            <a href="https://www.instagram.com/cnu_argos/" target="_blank" rel="noopener noreferrer" aria-label="인스타그램">
               <i class="fa fa-instagram" aria-hidden="true"></i>
             </a>
           </div>
@@ -452,10 +449,10 @@
                 Home
               </a>
               <a class="" href="education.html">
-                교육 활동
+                동아리 활동
               </a>
               <a class="" href="history.html">
-                활동 기록
+                연혁
               </a>
               <a class="" href="https://open.kakao.com/o/sIllhT5f">
                 가입 문의
@@ -492,6 +489,54 @@
   </script>
   <!-- custom js -->
   <script type="text/javascript" src="js/custom.js"></script>
+  <!-- 연혁 세로선: 각 연도마다 채워지도록, 처음엔 꽉 채워졌다가 맨 위 연도로 -->
+  <script>
+  (function(){
+    var section = document.getElementById("historySection");
+    var fill = document.getElementById("historyLineFill");
+    if (!section || !fill) return;
+    var h2s = section.querySelectorAll("h2");
+    var initialDone = false;
+    function getBlockBottoms() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var sectionTop = section.getBoundingClientRect().top + scrollTop;
+      var sectionBottom = sectionTop + section.offsetHeight;
+      var bottoms = [];
+      for (var i = 0; i < h2s.length; i++) {
+        var next = h2s[i + 1];
+        var bottom = next ? (next.getBoundingClientRect().top + scrollTop) : sectionBottom;
+        bottoms.push({ top: h2s[i].getBoundingClientRect().top + scrollTop, bottom: bottom });
+      }
+      return { sectionTop: sectionTop, sectionH: section.offsetHeight, bottoms: bottoms };
+    }
+    function update() {
+      var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      var vh = window.innerHeight;
+      var ref = scrollTop + vh * 0.4;
+      var data = getBlockBottoms();
+      var activeIdx = -1;
+      for (var i = 0; i < data.bottoms.length; i++) {
+        if (ref >= data.bottoms[i].top) activeIdx = i;
+      }
+      var pct = 0;
+      if (activeIdx >= 0) {
+        var blockBottom = data.bottoms[activeIdx].bottom;
+        pct = ((blockBottom - data.sectionTop) / data.sectionH) * 100;
+      }
+      pct = Math.max(0, Math.min(100, pct));
+      if (!initialDone) {
+        initialDone = true;
+        setTimeout(function() { fill.style.setProperty("--pct", pct); }, 50);
+      } else {
+        fill.style.setProperty("--pct", pct);
+      }
+    }
+    window.addEventListener("scroll", update);
+    window.addEventListener("resize", update);
+    fill.style.setProperty("--pct", "100");
+    setTimeout(update, 1350);
+  })();
+  </script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>

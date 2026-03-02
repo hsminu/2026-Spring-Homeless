@@ -1,11 +1,76 @@
-* { padding: 0; margin: 0; list-style: none;}
-body { padding: 0px;}
+/* 연혁 타임라인 */
+.history { margin-top: 50px; list-style: none; position: relative; }
+.history * { box-sizing: border-box; }
 
-.history{ margin-top: 50px;}
-.history h2 { position: relative; font-size: 32px; color:black; line-height: 1;}
-.history h2:before { content: ""; position: absolute; left:-48px; top:50%; width: 17px; height: 17px; border-radius: 100%; background: white; border:5px solid #231a6f; transform: translateY(-50%);box-sizing: border-box;}
-.history div { position: relative;padding: 0 0 0 48px;}
-.history div:before { content: ""; position: absolute; left:8px; top:0; width: 2px; height: 100%; background: black;}
-.history div:first-child:before { top:10px; height:calc(100% - 10px);}
+/* 날짜 숫자 제거 */
+.history li strong { display: none; }
+
+.history h2 {
+  position: relative;
+  font-size: 32px;
+  color: #00204a;
+  line-height: 1;
+}
+.history h2::before {
+  content: "";
+  position: absolute;
+  left: -48px;
+  top: 50%;
+  width: 17px;
+  height: 17px;
+  border-radius: 100%;
+  background: #fff;
+  border: 5px solid #3866d1;
+  transform: translateY(-50%);
+  box-sizing: border-box;
+}
+.history > div:last-child {
+  position: relative;
+  padding: 0 0 0 48px;
+}
+
+/* 1. 페이지 진입 시 자동으로 끝까지 스르륵 내려가는 얇은 가이드 선 */
+.history-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 25px;
+  width: 2px;
+  height: 0;
+  background: #a3abc8;
+  z-index: 0;
+  animation: historyDrawLine 1.2s ease-in-out 0.1s forwards;
+}
+
+@keyframes historyDrawLine {
+  0% { height: 0; }
+  100% { height: calc(100% - 25px); }
+}
+
+/* 2. 스크롤에 맞게 색칠되는 세로선 */
+.history-line {
+  position: absolute;
+  left: 8px;
+  top: 10px;
+  bottom: 0;
+  width: 2px;
+  z-index: 0;
+}
+.history-line-fill {
+  position: absolute;
+  left: 0;
+  top: 25px; /* 가이드 선과 동일 시작점 */
+  width: 100%;
+  height: calc(var(--pct, 0) * (100% - 25px) / 100);
+  background: #3866d1;
+  transition: height 0.4s ease-out;
+  z-index: 1;
+}
+
 .history ol { padding: 20px 0 74px; }
-.history li { font-size: 17px; color:black; line-height: 29px; margin-top: 10px;}
+.history li {
+  font-size: 17px;
+  color: #333;
+  line-height: 29px;
+  margin-top: 10px;
+}

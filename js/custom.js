@@ -36,22 +36,11 @@ $(".client_owl-carousel").owlCarousel({
 
 
 
-/** google_map js **/
-function myMap() {
-    var mapProp = {
-        center: new google.maps.LatLng(40.712775, -74.005973),
-        zoom: 18,
-    };
-    var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-}
-
-
 var educationSlideIndex = 1;
 var studySlideIndex = 1;
 var seminarSlideIndex = 1;
 var hackingSlideIndex = 1;
 var hackathonSlideIndex = 1;
-var affSlideIndex = 1;
 var jfsSlideIndex = 1;
 
 showSlides(educationSlideIndex, 'education');
@@ -59,7 +48,6 @@ showSlides(studySlideIndex, 'study');
 showSlides(seminarSlideIndex, 'seminar');
 showSlides(hackingSlideIndex, 'hacking');
 showSlides(hackathonSlideIndex, 'hackathon');
-showSlides(affSlideIndex, 'aff');
 showSlides(jfsSlideIndex, 'jfs');
 
 // Next/previous controls
@@ -74,8 +62,6 @@ function plusSlides(n, section) {
     showSlides(hackingSlideIndex += n, 'hacking');
   } else if (section === 'hackathon') {
     showSlides(hackathonSlideIndex += n, 'hackathon');
-  } else if (section === 'aff') {
-    showSlides(affSlideIndex += n, 'aff');
   } else if (section === 'jfs') {
     showSlides(jfsSlideIndex += n, 'jfs');
   }
@@ -93,8 +79,6 @@ function currentSlide(n, section) {
     showSlides(hackingSlideIndex = n, 'hacking');
   } else if (section === 'hackathon') {
     showSlides(hackathonSlideIndex = n, 'hackathon');
-  } else if (section === 'aff') {
-    showSlides(affSlideIndex = n, 'aff');
   } else if (section === 'jfs') {
     showSlides(jfsSlideIndex = n, 'jfs');
   }
@@ -112,11 +96,12 @@ function showSlides(n, section) {
       n = slides.length;
     }
     for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+      slides[i].classList.remove("slide-visible");
     }
     for (i = 0; i < dots.length; i++) {
       dots[i].className = dots[i].className.replace(" active", "");
     }
-    slides[n - 1].style.display = "block";
+    slides[n - 1].classList.add("slide-visible");
     dots[n - 1].className += " active";
   }
+
