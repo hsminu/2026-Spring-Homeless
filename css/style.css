@@ -161,7 +161,7 @@ a:focus {
 .header_section {
   width: 100%;
   z-index: 1030;
-  padding: 15px 0; /* 옛날처럼 여유 있는 두께로 원상복구 */
+  padding: 5px 0; /* 옛날처럼 여유 있는 두께로 원상복구 */
   background-color: transparent; /* 배경을 완전히 투명하게 뚫어버림 */
   
   /* 기존에 있던 position: fixed; 와 top:0; 등은 삭제했습니다 */
@@ -989,8 +989,7 @@ a:focus {
 
 .tc-stage {
   position: relative; 
-  width: calc(100% - 60px); 
-  max-width: 1400px; 
+  width: 100%;
   height: clamp(450px, 55vh, 600px); 
   border-radius: 32px; 
   overflow: hidden; 
@@ -1009,8 +1008,10 @@ a:focus {
 
 .tc-card {
   position: absolute; 
-  width: min(880px, 84%); 
-  height: clamp(480px, 40vh, 380px); 
+  width: min(800px, 80%); 
+  height: calc(100% - 100px); 
+  max-height: 420px; 
+  
   border-radius: 26px; 
   overflow: hidden; 
   transform-style: preserve-3d; 
@@ -1042,7 +1043,7 @@ a:focus {
 
 @media (max-width: 767px) { 
   .activity_taskchanger { padding-bottom: 60px; }
-  .tc-stage { width: calc(100% - 30px); height: 480px; border-radius: 20px; } 
+  .tc-stage { width: 100%; height: 480px; border-radius: 20px; }
   .tc-card { width: min(580px, 88%); height: 320px; border-radius: 18px; } 
   .tc-arrow { width: 28px; height: 28px; border-radius: 5px; } 
   .tc-arrow svg { width: 12px; height: 12px; } 

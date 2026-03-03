@@ -1,76 +1,78 @@
-/* 연혁 타임라인 */
-.history { margin-top: 50px; list-style: none; position: relative; }
-.history * { box-sizing: border-box; }
+* { padding: 0; margin: 0; list-style: none;}
+body { padding: 0px;}
 
-/* 날짜 숫자 제거 */
-.history li strong { display: none; }
+.history { margin-top: 50px; }
 
-.history h2 {
-  position: relative;
-  font-size: 32px;
-  color: #00204a;
-  line-height: 1;
+/* 선이 기준점을 잡을 수 있도록 relative 부여 */
+.history-container { 
+  position: relative; 
+  padding: 0 0 0 48px; 
 }
-.history h2::before {
-  content: "";
+
+/* 1. 얇은 배경 선 (페이지 로드 시 즉시 빠르게 내려감) */
+.line-bg {
   position: absolute;
-  left: -48px;
-  top: 50%;
-  width: 17px;
-  height: 17px;
-  border-radius: 100%;
-  background: #fff;
-  border: 5px solid #3866d1;
-  transform: translateY(-50%);
-  box-sizing: border-box;
-}
-.history > div:last-child {
-  position: relative;
-  padding: 0 0 0 48px;
-}
-
-/* 1. 페이지 진입 시 자동으로 끝까지 스르륵 내려가는 얇은 가이드 선 */
-.history-line::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 25px;
-  width: 2px;
-  height: 0;
-  background: #a3abc8;
-  z-index: 0;
-  animation: historyDrawLine 1.2s ease-in-out 0.1s forwards;
-}
-
-@keyframes historyDrawLine {
-  0% { height: 0; }
-  100% { height: calc(100% - 25px); }
-}
-
-/* 2. 스크롤에 맞게 색칠되는 세로선 */
-.history-line {
-  position: absolute;
-  left: 8px;
+  left: 7.5px; /* 원 중앙(8.5px)에 정확히 맞춤 */
   top: 10px;
-  bottom: 0;
   width: 2px;
-  z-index: 0;
-}
-.history-line-fill {
-  position: absolute;
-  left: 0;
-  top: 25px; /* 가이드 선과 동일 시작점 */
-  width: 100%;
-  height: calc(var(--pct, 0) * (100% - 25px) / 100);
-  background: #3866d1;
-  transition: height 0.4s ease-out;
+  height: 0; /* 애니메이션 시작 전 높이 */
+  background: #e1e8ed; /* 흰색 배경에 보이도록 연한 회색 */
+  animation: dropLine 0.6s cubic-bezier(0.1, 0.9, 0.2, 1) forwards; 
   z-index: 1;
 }
 
-.history ol { padding: 20px 0 74px; }
-.history li {
-  font-size: 17px;
-  color: #333;
-  line-height: 29px;
-  margin-top: 10px;
+/* 배경 선 그리기 애니메이션 (scale 대신 확실하게 height로 변경) */
+@keyframes dropLine {
+  0% { height: 0; }
+  100% { height: calc(100% - 10px); }
 }
+
+/* 2. 두꺼운 진행 선 (스크롤 시 0.4초 뒤 단번에 원까지 뻗어나감) */
+.line-progress {
+  position: absolute;
+  left: 6.5px; /* 4px로 두꺼워지므로 중앙축을 맞추기 위해 1px 이동 */
+  top: 10px;
+  width: 4px;
+  height: 0; 
+  background: #3866d1; /* ARGOS 파란색 */
+  /* 선이 중간에 안 멈추고 꽉 차게 점프하는 핵심 (ease-out) */
+  transition: height 0.4s ease-out; 
+  z-index: 2;
+}
+
+/* 3. 연도별 동그라미 (h2) */
+.history h2 { 
+  position: relative; 
+  font-size: 32px; 
+  color: black; 
+  line-height: 1; 
+  z-index: 3; /* 선보다 원이 위로 올라오게 설정 */
+  display: inline-block; 
+  background: white; /* 선이 원을 뚫고 지나가 보이지 않게 가림 */
+}
+
+/* 동그라미 기본 상태 (회색 테두리) */
+.history h2:before { 
+  content: ""; 
+  position: absolute; 
+  left: -48px; 
+  top: 50%; 
+  width: 17px; 
+  height: 17px; 
+  border-radius: 100%; 
+  background: white; 
+  border: 4px solid #e1e8ed; 
+  transform: translateY(-50%);
+  box-sizing: border-box;
+  transition: border-color 0.4s ease, border-width 0.2s ease;
+}
+
+/* 스크롤이 닿았을 때 (파란색 테두리로 활성화) */
+.history h2.active:before {
+  border-color: #3866d1;
+  border-width: 5px;
+}
+
+/* 텍스트 여백 설정 */
+.history ol { padding: 20px 0 74px; }
+.history li { font-size: 17px; color: black; line-height: 29px; margin-top: 10px; }
